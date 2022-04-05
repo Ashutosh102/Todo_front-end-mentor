@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(235, 21%, 11%);
+}
+ul,li{
+  list-style: none;
+}
+
+.background {
+  background: url("images/bg-desktop-dark.jpg") no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40vh;
+  transition: all 0.3s;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: -230px auto 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.header h1 {
+  color: #fff;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+}
+.header img{
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.dragdrop {
+  position: absolute;
+  bottom: 20px;
+  color: hsl(233, 14%, 35%);
+  align-self: center;
+  font-size: 1rem;
+}
+label{
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.todo-input{
+  position: relative;
+  display: flex;
+}
+.todo-input button{
+  border: 1px solid hsl(234, 11%, 52%);
+  outline: none;
+  background:none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  align-self: center;
+  margin-left: 15px;
+}
+.todo-input input{
+    width: 100%;
+    background-color: hsl(235, 24%, 19%);
+    height: 50px;
+    font-size: 1rem;
+    color: hsl(233, 11%, 84%);
+    padding: 10px 10px 10px 45px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Josefin Sans", sans-serif;
+}
+.todo-input input::placeholder{
+    color: hsl(234, 11%, 52%);
+}
+.filters{
+    display: flex;
+}
+.filters input[type="radio"]{
+  opacity: 0;
+}
+.filters label:hover{
+  color:hsl(236, 33%, 92%);
+}
+.filters input[type="radio"]:checked ~ span{
+  color:hsl(220, 98%, 61%);
+}
+.todos ul{
+  margin-top: 20px;
+  border-top-left-radius: 8px;
+}
+.todos ul li{
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  height: 50px;
+  font-size: 1rem;
+  color: hsl(233, 11%, 84%);
+  padding: 15px;
+  border-bottom: 1px solid hsl(233, 18%, 38%);
+  display: flex;
+  justify-content: space-between;
+}
+ul li.hidden{
+  display: none;
+}
+.todos input{
+  -webkit-appearance: none;
+  border: 1px solid hsl(234, 11%, 52%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.todos input:checked{
+  background: url('images/icon-check.svg'), linear-gradient(to right,hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  border:none;
+}
+.todos input:checked ~ .text{
+  text-decoration: line-through;
+  color:hsl(234, 11%, 52%);
+}
+.remove{
+  background: url('images/icon-cross.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  display: none;
+}
+ul li:hover .remove{
+  display: block;
+}
+.footer{
+  color: hsl(233, 14%, 35%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  height: 50px;
+  font-size: 1rem;
+  color: hsl(234, 11%, 52%);
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+}
+.clear{
+  cursor: pointer;
+}
+.clear:hover{
+  color:hsl(236, 33%, 92%);
+}
+/*darkmode*/
+body.light{
+  background-color: hsl(236, 33%, 92%);
+}
+body.light .background{
+  background: url("images/bg-desktop-light.jpg") no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40vh;
+}
+body.light .dragdrop{
+  color: hsl(236, 9%, 61%);
+}
+body.light .todo-input input{
+  color: hsl(235, 19%, 35%);
+  background-color: hsl(0, 0%, 98%);
+}
+body.light .todo-input button{
+  border: 1px solid hsl(233, 11%, 84%);
+}
+body.light .todos ul li{
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+body.light .todos input{
+  border: 1px solid hsl(233, 11%, 84%);
+}
+body.light .todos input:checked ~ .text{
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
+body.light .footer{
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(236, 9%, 61%);
+}
+body.light .filters label:hover{
+  color:hsl(235, 19%, 35%);
+}
+body.light .clear:hover{
+  color:hsl(235, 19%, 35%);
+}
+.mob{
+  display: none;
+}
+@media(max-width:600px){
+  .clear, .count{
+    display: none;
+  }
+  .background{
+    background: url("images/bg-mobile-dark.jpg") no-repeat;
+    background-size: cover;
+    height: 35vh;
+  }
+  .wrapper{
+    width: 90%;
+  }
+  .header h1{
+    font-size: 1.5rem;
+  }
+  .filters{
+    margin: auto;
+  }
+  .footer{
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .mob{
+  color: hsl(233, 14%, 35%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  height: 50px;
+  font-size: 1rem;
+  color: hsl(234, 11%, 52%);
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  }
+  .mob-clear{
+    cursor: pointer;
+  }
+  .mob-clear:hover{
+    color:hsl(236, 33%, 92%);
+  }
+  body.light .mob{
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(236, 9%, 61%);
+  }
+  body.light .background{
+    background: url("images/bg-mobile-light.jpg") no-repeat;
+    background-size: cover;
+  }
+  body.light .mob-clear:hover{
+    color:hsl(235, 19%, 35%);
+  }
+}
+
+
+
+
+

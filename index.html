@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <div class="header">
+        <h1>todo</h1>
+        <img class="theme" src="images/icon-sun.svg" alt="theme-icon" />
+      </div>
+      <div class="todo-input">
+        <button></button>
+        <input
+          name="todo-input"
+          id="todo-input"
+          aria-label="todo-input"
+          type="text"
+          placeholder="Create a new todo..."
+        />
+      </div>
+      <div class="todos">
+        <ul id="simpleList"></ul>
+      </div>
+      <div class="mob">
+        <div class="mob-count"><span></span> items left</div>
+        <div class="mob-clear">Clear Completed</div>
+      </div>
+      <div class="footer">
+        <div class="count"><span></span> items left</div>
+        <div class="filters">
+          <label>
+            <input type="radio" name="filter" id="all" checked />
+            <span>All</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="active" />
+            <span>Active</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="completed" />
+            <span>Completed</span>
+          </label>
+        </div>
+        <div class="clear">Clear Completed</div>
+      </div>
+      <div class="dragdrop">
+        <p>Drag and drop to reorder list</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
